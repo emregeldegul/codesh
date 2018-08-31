@@ -1,6 +1,6 @@
 # CodeSH
 
-[![N|Solid](https://emregeldegul.net/wp-content/uploads/2018/09/codeshUsage.png)]( https://emregeldegul.net/2018/09/codesh-v2-kod-paylasma-modulu)
+[![N|Solid](https://emregeldegul.net/wp-content/uploads/2018/09/codeshUsage.png)]( https://emregeldegul.net/2018/09/codesh-v3-kod-paylasma-modulu)
 
 CodeSH, kaynak kodları hızlı bir biçimde paste.ubuntu.com üzerinde paylaşmaya olanak sağlayan bir modül/programdır. Program olarak kullanılabildiği gibi bir python modülü olarakta kullanılabilir.
 
@@ -9,7 +9,7 @@ CodeSH, kaynak kodları hızlı bir biçimde paste.ubuntu.com üzerinde paylaşm
   - Kodların dilini otomatik olarak tespit eder
   - Python modülü olarak kullanılabilir
 
-[![N|Solid](https://emregeldegul.net/wp-content/uploads/2018/09/codeshShare.png)]( https://emregeldegul.net/2018/09/codesh-v2-kod-paylasma-modulu)
+[![N|Solid](https://emregeldegul.net/wp-content/uploads/2018/09/codeshShare.png)]( https://emregeldegul.net/2018/09/codesh-v3-kod-paylasma-modulu)
 
 # Program Kurulum
 ```sh
