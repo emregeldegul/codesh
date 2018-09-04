@@ -43,7 +43,11 @@ class sh:
             '.css': "css",
             ".pl": "perl",
             ".rb": "rb",
-            ".css": "css"
+            ".css": "css",
+            ".sh": "bash",
+            ".go": "go",
+            ".html": "html",
+            ".js": "js"
         }.get(lang, "text")
 
     def share(self, file):
@@ -71,7 +75,7 @@ class sh:
             return pasteUrl
 
 if __name__ == "__main__":
-    app = sh(username="github.com/murecoder/codesh")
+    app = sh(username=environ['USER'])
 
     if len(argv) == 1:
         print("Using:")
@@ -79,6 +83,7 @@ if __name__ == "__main__":
         print("\t~$ python codesh.py --list (List Of Last Shares)")
         print("\nModule Usage:")
         print("\tfrom codesh import sh\n\tapp = sh(username='nickname')\n\tapp.main('filename.txt')")
+        print("\n\tapp.jData # this object returns the last link list")
     else:
         if argv[1] == "--list":
             for i in app.jData:
