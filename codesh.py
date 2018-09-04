@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from os import path, environ
 from json import loads, dump
 from time import strftime
