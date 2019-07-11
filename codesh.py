@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+from getpass import getuser
 from os import path, environ
 from json import loads, dump
 from time import strftime
@@ -22,16 +22,11 @@ class sh:
         app.jData
     """
     def __init__(self, username):
-        self.checkFile = lambda file: path.exists(file)
-        self.parseFile = lambda file: path.splitext(file)
         self.username = username
-
-        self.jsonFile = path.join(environ['HOME'], "codesh.json")
-
-        if not self.checkFile(self.jsonFile):
+        self.jsonFile = path.join(path.expanduser("~"), ".codesh.json")
+        if not path.exists(self.jsonFile):
             with open(self.jsonFile, 'w') as outfile:
                 dump([], outfile)
-
         self.jData = loads(open(self.jsonFile, "r").read())
 
     def findUrl(self, text):
@@ -57,28 +52,23 @@ class sh:
         code = open(fileName+ext, "r").read()
         syntax = self.lang(ext)
         data = {"content": code, "syntax": syntax, "poster": self.username}
-
         request = post("https://paste.ubuntu.com/", data=data)
         return self.findUrl(request.text)
 
     def main(self, file):
-        if not self.checkFile(file):
+        if not path.exists(file):
             raise FileNotFoundError("File {0} Not Found!".format(file))
         else:
-            pasteUrl = self.share(self.parseFile(file))
-
+            pasteUrl = self.share(self.path.splitext(file))
             data = {"id": pasteUrl, "time": strftime('%c'), "poster": self.username}
-
             self.jData.append(data)
-
             with open(self.jsonFile, 'w') as outfile:
                 dump(self.jData, outfile, sort_keys=True, indent=4)
-
             return pasteUrl
 
 if __name__ == "__main__":
-    app = sh(username=environ['USER'])
-
+    app = sh(username = getuser())
+    # TODO: Add The Argument Parser
     if len(argv) == 1:
         print("Using:")
         print("\t~$ python codesh.py [*files]")
