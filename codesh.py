@@ -59,7 +59,7 @@ class sh:
         if not path.exists(file):
             raise FileNotFoundError("File {0} Not Found!".format(file))
         else:
-            pasteUrl = self.share(self.path.splitext(file))
+            pasteUrl = self.share(path.splitext(file))
             data = {"id": pasteUrl, "time": strftime('%c'), "poster": self.username}
             self.jData.append(data)
             with open(self.jsonFile, 'w') as outfile:

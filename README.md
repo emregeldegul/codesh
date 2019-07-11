@@ -39,7 +39,7 @@ Paylaşılan son kodların listesi için **--list** argümanının gönderilmesi
 
 Bu komut paylaşılan programların sıralı tam listesini ayrıntıları ile verecektir.
 # Modül Kullanımı
-Modül olarak yüklendikten sonra **sh** sınıfı ile işlemler yapılabilir. Main fonksiyonuna dosya ismi gönderildiğinde paste.ubuncu.com üzerinde kaynak koda ait ID geri döner.
+Modül olarak yüklendikten sonra **sh** sınıfı ile işlemler yapılabilir. Main fonksiyonuna dosya ismi gönderildiğinde paste.ubuntu.com üzerinde kaynak koda ait ID geri döner.
 
 ```py
 from codesh import sh
