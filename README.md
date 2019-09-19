@@ -11,15 +11,15 @@ CodeSH, kaynak kodları hızlı bir biçimde paste.ubuntu.com üzerinde paylaşm
 
 [![N|Solid](https://emregeldegul.net/wp-content/uploads/2018/09/codeshShare.png)]( https://emregeldegul.net/2018/09/codesh-v3-kod-paylasma-modulu)
 
-# Program Kurulum
+# Git Üzerinden Kurulum
+
 ```sh
-~$ git clone https://github.com/MuReCoder/codesh.git && cd codesh
-~$ pip install -r requirements.txt
-~$ sudo mv codesh.py /usr/bin/codesh
-~$ sudo chmod +x /usr/bin/codesh
+~$ git clone https://github.com/emregeldegul/codesh.git && cd codesh
+~$ python setup.py install
 ```
 
-# Modül Kurulum
+# Pip Üzerinden Kurulum
+
 ```sh
 ~$ pip install codesh
 ```
@@ -38,6 +38,7 @@ Paylaşılan son kodların listesi için **--list** argümanının gönderilmesi
 ```
 
 Bu komut paylaşılan programların sıralı tam listesini ayrıntıları ile verecektir.
+
 # Modül Kullanımı
 Modül olarak yüklendikten sonra **sh** sınıfı ile işlemler yapılabilir. Main fonksiyonuna dosya ismi gönderildiğinde paste.ubuntu.com üzerinde kaynak koda ait ID geri döner.
 
@@ -58,7 +59,7 @@ print(app.jData)
 ```
 
 # Ek Bilgiler
-- Paylaşılan kodlara ait veriler (id, tarih, paylaşan) ev dizininde "codesh.json" formatında saklanır.
+- Paylaşılan kodlara ait veriler (id, tarih, paylaşan) ev dizininde ".codesh.json" ismiyle JSON formatında saklanır.
 - Sadece linux ortamında test edilmiştir.
 
 
